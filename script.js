@@ -1,19 +1,26 @@
-document.getElementById("contact-form").addEventListener("submit", function(e) {
-    e.preventDefault();
+const form = document.getElementById("contact-form");
+const response = document.getElementById("form-response");
 
-    let messages = JSON.parse(localStorage.getItem("messages")) || [];
+form.addEventListener("submit", function(e) {
+    e.preventDefault(); // Prevent default submission
 
-    messages.push({
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        message: document.getElementById("message").value,
-        date: new Date().toLocaleString()
+    // Use FormSubmit with AJAX to send the form
+    fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(responseFetch => {
+        if (responseFetch.ok) {
+            response.textContent = "✅ Message sent successfully!";
+            form.reset();
+        } else {
+            response.textContent = "⚠️ Oops! Something went wrong. Try again.";
+        }
+    })
+    .catch(() => {
+        response.textContent = "⚠️ Unable to send message. Check your internet.";
     });
-
-    localStorage.setItem("messages", JSON.stringify(messages));
-
-    document.getElementById("form-response").textContent =
-        "Message sent successfully!";
-
-    this.reset();
 });
