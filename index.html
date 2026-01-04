@@ -88,10 +88,17 @@
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="message" placeholder="Your Message" required></textarea>
-        <input type="hidden" name="_next" value="thankyou.html">
+
+        <!-- Hidden FormSubmit fields -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New message from Portfolio">
+
         <button type="submit">Send Message</button>
     </form>
+    <!-- Success message placeholder -->
+    <p id="form-response" style="color: green; font-weight: bold; margin-top: 0.5rem;"></p>
 </section>
+
 
 <!-- Footer -->
 <footer>
