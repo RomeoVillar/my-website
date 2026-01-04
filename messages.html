@@ -2,108 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Admin Messages | Romeo Villar</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You</title>
 <link rel="stylesheet" href="style.css">
-
-<!-- CryptoJS library -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-<style>
-    /* Optional overrides for buttons inside messages */
-    .grid-card button {
-        margin-top: 5px;
-        padding: 5px 10px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-    .delete-btn { background: #ff4c4c; color: white; }
-    .logout-btn { background: #0077cc; color: white; margin-top: 10px; }
-</style>
 </head>
 <body>
-
-<header>
-    <h1>Admin Panel – Messages</h1>
-</header>
-
-<!-- Login Section -->
-<section id="login-section">
-    <h2>Owner Login</h2>
-    <input type="password" id="password" placeholder="Enter password">
-    <button onclick="login()">Login</button>
-    <p id="login-error" style="color:red;"></p>
-</section>
-
-<!-- Messages Section -->
-<section id="messages-section" style="display:none;">
-    <h2>Received Messages</h2>
-    <div id="messages"></div>
-    <button onclick="logout()" class="logout-btn">Logout</button>
-</section>
-
-<script>
-const PASSWORD_HASH = "8001e119ea037728ba039e0c089bf915"; // hash for rvillar17
-
-// Hash function using CryptoJS
-function hash(text) {
-    return CryptoJS.MD5(text).toString();
-}
-
-// Login function
-function login() {
-    const input = document.getElementById("password").value;
-    const inputHash = hash(input);
-
-    if (inputHash === PASSWORD_HASH) {
-        document.getElementById("login-section").style.display = "none";
-        document.getElementById("messages-section").style.display = "block";
-        loadMessages();
-    } else {
-        document.getElementById("login-error").textContent = "Incorrect password.";
-    }
-}
-
-// Load and display messages
-function loadMessages() {
-    const messages = JSON.parse(localStorage.getItem("messages")) || [];
-    const box = document.getElementById("messages");
-
-    if (messages.length === 0) {
-        box.innerHTML = "<p>No messages yet.</p>";
-        return;
-    }
-
-    // Show message count
-    box.innerHTML = `<p><strong>Total Messages: ${messages.length}</strong></p>`;
-
-    messages.forEach((m, index) => {
-        box.innerHTML += `
-        <div class="grid-card">
-            <strong>Name:</strong> ${m.name}<br>
-            <strong>Email:</strong> ${m.email}<br>
-            <strong>Message:</strong> ${m.message}<br>
-            <small>${m.date}</small><br>
-            <button class="delete-btn" onclick="deleteMessage(${index})">Delete</button>
-        </div>`;
-    });
-}
-
-// Delete a specific message
-function deleteMessage(index) {
-    let messages = JSON.parse(localStorage.getItem("messages")) || [];
-    messages.splice(index, 1); // Remove message
-    localStorage.setItem("messages", JSON.stringify(messages));
-    loadMessages(); // Refresh
-}
-
-// Logout function
-function logout() {
-    document.getElementById("messages-section").style.display = "none";
-    document.getElementById("login-section").style.display = "block";
-    document.getElementById("password").value = "";
-    document.getElementById("login-error").textContent = "";
-}
-</script>
-
+    <header>
+        <h1>Thank You!</h1>
+    </header>
+    <section style="text-align:center; padding:2rem;">
+        <p>Your message has been sent successfully. I will get back to you soon.</p>
+        <a href="index.html" style="color:#0077cc;">Go back to Portfolio</a>
+    </section>
 </body>
 </html>
