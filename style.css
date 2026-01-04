@@ -1,68 +1,67 @@
-/* General Styles */
+.profile-pic {
+    width: 150px;       /* Adjust size */
+    height: 150px;      /* Adjust size */
+    border-radius: 50%; /* Makes it circular */
+    display: block;
+    margin: 0 auto 1rem auto; /* Center and add space below */
+    border: 3px solid #4facfe; /* Optional colored border */
+    object-fit: cover;  /* Keeps aspect ratio */
+}
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    background-color: #ffffff;
+    background: #f4f6f8;
     color: #333;
 }
 
-/* Header Styles */
 header {
-    background-color: #4CAF50;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
     color: white;
-    padding: 20px 0;
+    padding: 2rem;
     text-align: center;
 }
 
-header nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Section Styles */
 section {
-    padding: 40px 20px;
-    max-width: 800px;
+    max-width: 700px;
     margin: auto;
-    background: white;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 2rem;
 }
 
-/* Button Styles */
+h2 {
+    color: #0077cc;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+}
+
 button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
+    width: 100%;
+    padding: 0.8rem;
+    background: #4facfe;
     border: none;
-    border-radius: 5px;
+    color: white;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #195f1d;
+    opacity: 0.9;
 }
 
-/* Footer Styles */
 footer {
     text-align: center;
-    padding: 20px;
-    background-color: #333;
+    background: #222;
     color: white;
+    padding: 1rem;
+}
+
+.grid-card {
+    background: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
 }
