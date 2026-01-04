@@ -28,14 +28,17 @@
 <section class="contact">
     <h2>Contact Me</h2>
 
-    <form id="contact-form">
-        <input type="text" id="name" placeholder="Your Name" required>
-        <input type="email" id="email" placeholder="Your Email" required>
-        <textarea id="message" placeholder="Your Message" required></textarea>
+    <form id="contact-form" action="https://formsubmit.co/youremail@example.com" method="POST">
+        <!-- Replace "youremail@example.com" with your real email -->
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+
+        <!-- Optional: redirect to a thank you page after submit -->
+        <input type="hidden" name="_next" value="thankyou.html">
+
         <button type="submit">Send Message</button>
     </form>
-
-    <p id="form-response"></p>
 </section>
 
 <footer>
