@@ -1,49 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Simple Website</title>
-    <link rel="stylesheet" href="style .css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Romeo C. Villar Jr. | Portfolio</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header>
-        <h1>Welcome to My Website</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="home">
-        <h2>Home Section</h2>
-        <p>This is a simple website created with HTML, CSS, and JavaScript.</p>
-        <button id="clickBtn">Click Me!</button>
-        <p id="message"></p>
-    </section>
+<header>
+    <img src="face.jpg" alt="Romeo Villar Profile Picture" class="profile-pic">
+    <h1>Romeo C. Villar Jr.</h1>
+    <h2>BSCpE 1st Year Student</h2>
+    <p>State University of Surigao del Norte</p>
+</header>
 
-    <section id="about">
-        <h2>About Section</h2>
-        <p>Here you can put some information about yourself or your project.</p>
-    </section>
 
-    <section id="contact">
-        <h2>Contact Section</h2>
-        <form id="contactForm">
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="email" id="email" placeholder="Your Email" required>
-            <textarea id="messageInput" placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
+<section class="about">
+    <h2>About Me</h2>
+    <p>
+        I am a first-year Bachelor of Science in Computer Engineering student.
+        I am passionate about programming, software development, and technology.
+    </p>
+</section>
 
-    <footer>
-        <p>© 2026 My Website</p>
-    </footer>
+<section class="contact">
+    <h2>Contact Me</h2>
 
-    <script src="script.js"></script>
+    <form id="contact-form">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+
+    <p id="form-response"></p>
+</section>
+
+<footer>
+    <p>© 2026 Romeo C. Villar Jr.</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
